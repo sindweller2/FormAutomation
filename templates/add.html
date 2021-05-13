@@ -1,0 +1,128 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>Add</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script> 
+        $(document).ready(function() { 
+          $("#form").validate(); 
+        }); 
+      </script>
+</head>  
+<body> 
+    <h3>Employee Add</h3> 
+    <div class="container">
+        <form  class="form-horizontal" action = "/insert" method="post">
+
+            <div class="form-group">
+                <label style="display:none;" class="control-label col-sm-2">ID Employees :</label>
+                <div class="col-sm-10">
+                    <input style="display:none;" class="form-control" type="text" name="id_employees">
+                </div>
+            </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2">No. Registrasi :</label>
+            <div class="col-sm-10">
+            <input class="form-control" type="text" name="no_registrasi" required>
+        </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Nama Lengkap :</label>
+            <div class="col-sm-10">
+            <input class="form-control" type="text" name="nama" required>
+        </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Tempat/Tanggal Lahir :</label>
+            <div class="col-sm-10">
+            <input class="form-control" type="text" name="tempat_tanggal_lahir" required>
+        </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">NIK/NIP :</label>
+            <div class="col-sm-10">
+            <input class="form-control" type="text" name="nik_nip" required>
+        </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Email Aktif :</label>
+            <div class="col-sm-10">
+            <input class="form-control" type="text" name="email" required>
+        </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">No HP Aktif :</label>
+            <div class="col-sm-10">
+            <input class="form-control" type="text" name="hp" required>
+        </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">No HP Wali/Atasan :</label>
+            <div class="col-sm-10">
+            <input class="form-control" type="text" name="hp_wali_atasan" required>
+        </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Pekerjaan :</label>
+            <div class="col-sm-10">
+            <input class="form-control" type="text" name="pekerjaan" required>
+        </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Alamat Domisili :</label>
+            <div class="col-sm-10">
+            <textarea class="form-control" rows="3" name="alamat" required></textarea>
+        </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Program Akademi :</label>
+            <div class="col-sm-10">
+            <input class="form-control" type="text" name="program_akademi" required>
+        </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Tema Pelatihan :</label>
+            <div class="col-sm-10">
+            <input class="form-control" type="text" name="tema_pelatihan" required>
+        </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Mitra Pelatihan :</label>
+            <div class="col-sm-10">
+            <input class="form-control" type="text" name="mitra_pelatihan" required>
+        </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Kota :</label>
+            <div class="col-sm-10">
+            <input class="form-control" type="text" name="kota_sekarang" required>
+        </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Bulan Pelaksanaan :</label>
+            <div class="col-sm-10">
+            <input class="form-control" type="text" name="bulan_pelaksanaan" required>
+        </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Saran :</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" rows="3" name="saran" required></textarea>
+        </div>
+        </div>
+
+
+          <div class="form-group">        
+            <div class="col-sm-offset-2 col-sm-10">
+              <button class="btn btn-primary" type="submit">Submit</button>
+              <button class="btn btn-primary" type="reset">Reset</button>
+            </div>
+          </div>
+        </form>
+      </div> 
+</body>  
+</html> 

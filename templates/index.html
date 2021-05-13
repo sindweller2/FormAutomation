@@ -1,0 +1,94 @@
+<!DOCTYPE html>  
+<html>  
+    <head>  
+        <title>List</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" >
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function () {
+    $('#dtHorizontalVerticalExample').DataTable({
+    "scrollX": true,
+    "scrollY": true,
+    });
+    $('.dataTables_length').addClass('bs-select');
+    });
+            </script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head> 
+<body>
+<h3>Employee List</h3>
+<table id="dtHorizontalVerticalExample" class="table table-hover table-bordered w-auto" cellspacing="0" width="100%">
+    <thead>  
+        <tr>
+        <th><a class="btn btn-success" href="/add">Add</a></th>
+        <th style="display:none;" scope="col">ID</th>
+        <th scope="col">No. Registrasi</th> 
+        <th scope="col">Nama Lengkap (Sesuai KTP)</th>
+        <th scope="col">Tempat/Tanggal Lahir</th>  
+        <th scope="col">NIK/NIP</th>
+        <th scope="col">Email Aktif</th>  
+        <th scope="col">No HP Aktif</th>
+        <th scope="col">No HP Wali/Atasan</th>
+        <th scope="col">Pekerjaan</th>
+        <th scope="col">Alamat Domisili</th>
+        <th scope="col">Program Akademi</th>
+        <th scope="col">Tema Pelatihan</th>
+        <th scope="col">Mitra Pelatihan</th>
+        <th scope="col">Kota</th>
+        <th scope="col">Bulan Pelaksanaan</th>
+        <th scope="col">Saran</th>
+    </tr>
+    </thead>
+      
+    <tbody>
+    {% for row in rows %}
+        <tr>
+            <td><a class="btn btn-primary" href="/fk/{{row["id_employees"]}}">FK</a> <a class="btn btn-warning" href="/fpj/{{row["id_employees"]}}">FPJ</a> <a class="btn btn-info" href="/edit/{{row["id_employees"]}}">Edit</a> <a class="btn btn-danger" href="/delete/{{row["id_employees"]}}" onclick="return confirm('Are you sure you want to delete?');">Delete</a></td>
+            <td style="display:none;">{{row["id_employees"]}}</td>
+            <th scope="row">{{row["no_registrasi"]}}</th> 
+            <th scope="row">{{row["nama"]}}</th>
+            <td>{{row["tempat_tanggal_lahir"]}}</td>
+            <td>{{row["nik_nip"]}}</td>
+            <td>{{row["email"]}}</td>
+            <td>{{row["hp"]}}</td>
+            <td>{{row["hp_wali_atasan"]}}</td>
+            <td>{{row["pekerjaan"]}}</td>
+            <td>{{row["alamat"]}}</td>
+            <td>{{row["program_akademi"]}}</td>
+            <td>{{row["tema_pelatihan"]}}</td>
+            <td>{{row["mitra_pelatihan"]}}</td>
+            <td>{{row["kota_sekarang"]}}</td>
+            <td>{{row["bulan_pelaksanaan"]}}</td>
+            <td>{{row["saran"]}}</td>
+        </tr>  
+    {% endfor %}
+</tbody>
+
+<tfoot>  
+    <tr>
+        <th><a class="btn btn-success" href="/add">Add</a></th>
+        <th style="display:none;" scope="col">ID</th>
+        <th scope="col">No. Registrasi</th> 
+        <th scope="col">Nama Lengkap (Sesuai KTP)</th>
+        <th scope="col">Tempat/Tanggal Lahir</th>  
+        <th scope="col">NIK/NIP</th>
+        <th scope="col">Email Aktif</th>  
+        <th scope="col">No HP Aktif</th>
+        <th scope="col">No HP Wali/Atasan</th>
+        <th scope="col">Pekerjaan</th>
+        <th scope="col">Alamat Domisili</th>
+        <th scope="col">Program Akademi</th>
+        <th scope="col">Tema Pelatihan</th>
+        <th scope="col">Mitra Pelatihan</th>
+        <th scope="col">Kota</th>
+        <th scope="col">Bulan Pelaksanaan</th>
+        <th scope="col">Saran</th>
+    </tr>
+</tfoot>
+</table>
+<br><br>
+</body>  
+</html>  
